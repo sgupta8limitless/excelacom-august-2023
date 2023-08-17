@@ -2,27 +2,28 @@
 // 99%
 
 
-void main()
+void main() 
 {
 
   print("First");
 
-
-  doSomething().then((value) {
-    print(value);
-  });
-
+  doSomething();
 
   print("Ended");
 
 }
 
 
-// completed 
-// uncompleted 
+void doSomething() async 
+{
+   var data = await getData();
+   print(data);
+}
 
 
-Future<String> doSomething()
+
+
+Future<String> getData()
 {
 
  Future<String> data = Future.delayed(Duration(seconds: 6),(){
@@ -31,6 +32,6 @@ Future<String> doSomething()
   });
 
 
-return data;
+  return data;
 
 }
